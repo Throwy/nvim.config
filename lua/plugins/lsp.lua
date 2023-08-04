@@ -20,6 +20,7 @@ return {
                 lsp.default_keymaps({ buffer = bufnr })
                 local opts = { buffer = bufnr }
 
+                -- use all active/attached servers to format the current buffer
                 vim.keymap.set("n", "<leader>lf", function()
                     vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
                 end, opts)
