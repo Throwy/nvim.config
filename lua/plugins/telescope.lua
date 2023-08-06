@@ -7,7 +7,7 @@ return {
             local telescope = require("telescope")
             local actions = require("telescope.actions")
 
-            telescope.setup{
+            telescope.setup {
                 defaults = {
                     mappings = {
                         i = {
@@ -33,5 +33,5 @@ return {
             vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
             vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols)
         end
-    }
+    },
 }

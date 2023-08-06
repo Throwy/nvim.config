@@ -36,7 +36,6 @@ return {
                 "lua_ls",
                 "eslint",
                 "sqlls",
-                "lemminx",
                 "yamlls",
                 "pyre",
             })
