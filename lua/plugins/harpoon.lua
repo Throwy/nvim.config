@@ -1,6 +1,9 @@
 return {
     {
         "theprimeagen/harpoon",
+        enabled = function ()
+           return (not vim.g.vscode)
+        end,
         config = function()
             local mark = require("harpoon.mark")
             local ui = require("harpoon.ui")

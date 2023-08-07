@@ -1,6 +1,9 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
+        enabled = function ()
+           return (not vim.g.vscode)
+        end,
         branch = 'v2.x',
         dependencies = {
             -- LSP Support

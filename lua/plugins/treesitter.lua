@@ -6,6 +6,9 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        enabled = function ()
+           return (not vim.g.vscode)
+        end,
         build = ":TSUpdate",
         opts = {
             highlight = {

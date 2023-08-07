@@ -3,6 +3,9 @@ return {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' },
+        enabled = function ()
+           return (not vim.g.vscode)
+        end,
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")

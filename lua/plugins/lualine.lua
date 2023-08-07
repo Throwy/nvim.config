@@ -1,6 +1,9 @@
 return {
     {
         "nvim-lualine/lualine.nvim",
+        enabled = function ()
+           return (not vim.g.vscode)
+        end,
         opts = {
             options = {
                 icons_enabled = false,
