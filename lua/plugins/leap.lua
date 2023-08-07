@@ -7,6 +7,11 @@ return {
             leap.opts.case_sensitive = false
             leap.opts.safe_labels = {}
 
+            vim.keymap.set({ 'n', 'v' }, 's', function()
+                local current_window = vim.fn.win_getid()
+                leap.leap { target_windows = { current_window } }
+            end)
+
             vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' }) -- or some grey
             vim.api.nvim_set_hl(0, 'LeapMatch', {
                 -- For light themes, set to 'black' or similar.
@@ -30,4 +35,3 @@ return {
         end
     }
 }
-
