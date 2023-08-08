@@ -6,16 +6,19 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        version = false,
         enabled = function ()
            return (not vim.g.vscode)
         end,
         build = ":TSUpdate",
+        event = { "BufReadPost", "BufNewFile" },
+        cmd = { "TSUpdateSync" },
         opts = {
             highlight = {
                 enable = true,
             },
             indent = {
-                enable = truem
+                enable = true
             },
             ensure_installed = {
                 "typescript",
