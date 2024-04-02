@@ -1,8 +1,8 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        enabled = function ()
-           return (not vim.g.vscode)
+        enabled = function()
+            return (not vim.g.vscode)
         end,
         branch = 'v2.x',
         dependencies = {
@@ -30,17 +30,7 @@ return {
             end)
 
             lsp.ensure_installed({
-                "tsserver",
-                "csharp_ls",
-                "bashls",
-                "cssls",
-                "html",
-                "jsonls",
-                "lua_ls",
-                "eslint",
-                "sqlls",
-                "yamlls",
-                "pyre",
+                "omnisharp",
             })
 
             lsp.setup()

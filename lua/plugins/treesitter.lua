@@ -24,6 +24,7 @@ return {
                 "typescript",
                 "javascript",
                 "lua",
+                "c_sharp",
             },
             sync_install = false,
             auto_install = true,
