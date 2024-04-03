@@ -1,9 +1,6 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        enabled = function()
-            return (not vim.g.vscode)
-        end,
         branch = 'v2.x',
         dependencies = {
             -- LSP Support
@@ -21,17 +18,21 @@ return {
 
             lsp.on_attach(function(client, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
-                local opts = { buffer = bufnr }
-
-                -- use all active/attached servers to format the current buffer
-                vim.keymap.set("n", "<leader>lf", function()
-                    vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-                end, opts)
             end)
 
-            lsp.ensure_installed({
-                "omnisharp",
+            require("mason").setup({})
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "omnisharp"
+                },
+                handlers = {
+                    lsp.default_setup
+                }
             })
+
+            -- lsp.ensure_installed({
+            --     "omnisharp",
+            -- })
 
             lsp.setup()
 
@@ -40,11 +41,13 @@ return {
             cmp.setup({
                 preselect = "item",
                 completion = {
-                    completeopt = 'menu,menuone,noinsert'
+                    completeopt = 'menu,menuone,noinsert',
+                    autocomplete = false
                 },
-                mapping = {
-                    ["<TAB>"] = cmp.mapping.confirm({ select = false })
-                }
+                mapping = cmp.mapping.preset.insert({
+                    ["<TAB>"] = cmp.mapping.confirm({ select = false }),
+                    ["<C-Space>"] = cmp.mapping.complete(),
+                }),
             })
         end
     }

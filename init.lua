@@ -13,8 +13,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-    ui = {
-        border = "solid"
+local opts = {
+    defaults = {
+        -- lazy = true,
     },
-})
+    ui = {
+        border = "solid",
+    },
+    rtp = {
+        disabled_plugins = {
+            "netrwPlugin",
+        },
+    },
+    change_detection = {
+        notify = false,
+    },
+}
+
+require("lazy").setup("plugins", opts)
