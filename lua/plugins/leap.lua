@@ -7,10 +7,10 @@ local config = function()
     leap.opts.case_sensitive = false
     leap.opts.safe_labels = {}
 
-    keymap.set('n',         's', '<Plug>(leap)', keymap_options({ desc = "Bidirection leap" })) 
-    keymap.set('n',         'S', '<Plug>(leap-from-window)', keymap_options({ desc = "Leap from window" }))
-    keymap.set({'x', 'o'},  's', '<Plug>(leap-forward)', keymap_options({ desc = "Leap forward" }))
-    keymap.set({'x', 'o'},  'S', '<Plug>(leap-backward)', keymap_options({ desc = "Leap backward" }))
+    keymap.set('n', 's', '<Plug>(leap)', keymap_options({ desc = "Bidirection leap" }))
+    keymap.set('n', 'S', '<Plug>(leap-from-window)', keymap_options({ desc = "Leap from window" }))
+    keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)', keymap_options({ desc = "Leap forward" }))
+    keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)', keymap_options({ desc = "Leap backward" }))
 
     -- The below settings make Leap's highlighting closer to what you've been
     -- used to in Lightspeed.
@@ -18,7 +18,9 @@ local config = function()
     vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' }) -- or some grey
     vim.api.nvim_set_hl(0, 'LeapMatch', {
         -- For light themes, set to 'black' or similar.
-        fg = 'white', bold = true, nocombine = true,
+        fg = 'white',
+        bold = true,
+        nocombine = true,
     })
 
     -- Lightspeed colors
