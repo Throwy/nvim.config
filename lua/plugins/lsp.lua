@@ -25,7 +25,10 @@ local config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
         desc = "Lsp Actions",
         callback = function(event)
-            local opts = { buffer = event.buf }
+            local client = vim.lsp.get_client_by_id(event.data.client_id)
+            if client.server_capabilities.signatureHelpProvider then
+                require("lsp-overloads").setup(client, {})
+            end
 
             keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>",
                 keymap_options({ buffer = event.buf, desc = "Lsp Hover" }))
@@ -74,10 +77,12 @@ local config = function()
     })
 
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
 
     cmp.setup({
         sources = {
             { name = "nvim_lsp" },
+            { name = "luasnip" },
         },
         mapping = cmp.mapping.preset.insert({
             ["<TAB>"] = cmp.mapping.confirm({ select = true }),
@@ -85,7 +90,7 @@ local config = function()
         }),
         snippet = {
             expand = function(args)
-                require("luasnip").lsp_expand(args.body)
+                luasnip.lsp_expand(args.body)
             end,
         },
     })
@@ -100,6 +105,7 @@ return {
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
+            "Issafalcon/lsp-overloads.nvim"
         },
         lazy = false,
         config = config,
