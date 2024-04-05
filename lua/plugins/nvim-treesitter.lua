@@ -1,4 +1,5 @@
 local config = function()
+    require("nvim-treesitter.install").compilers = { "gcc", "clang" }
     local treesitter = require("nvim-treesitter.configs")
 
     treesitter.setup({
@@ -50,6 +51,7 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
+    version = nil,
     lazy = false,
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
