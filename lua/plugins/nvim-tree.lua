@@ -1,3 +1,6 @@
+local keymap = vim.keymap
+local keymap_options = require("utils.core").keymap_options
+
 return {
     {
         "nvim-tree/nvim-tree.lua",
@@ -10,6 +13,7 @@ return {
                     enable = true,
                 },
             })
+            keymap.set("n", '<leader>o', '<cmd>NvimTreeToggle<CR>', keymap_options({ desc = "Open file tree" }))
         end
     }
 }
