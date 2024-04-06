@@ -11,13 +11,4 @@ return {
             vim.cmd.colorscheme("vscode")
         end
     },
-    {
-        "catppuccin/nvim",
-        enabled = function()
-            return (not vim.g.vscode)
-        end,
-        name = "catppuccin",
-        lazy = false,
-        priority = 1000,
-    },
 }
