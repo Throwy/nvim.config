@@ -47,6 +47,9 @@ end
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    enabled = function()
+        return (not vim.g.vscode)
+    end,
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },

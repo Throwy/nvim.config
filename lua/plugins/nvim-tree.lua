@@ -4,6 +4,9 @@ local keymap_options = require("utils.core").keymap_options
 return {
     {
         "nvim-tree/nvim-tree.lua",
+        enabled = function()
+            return (not vim.g.vscode)
+        end,
         config = function()
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1

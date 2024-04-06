@@ -20,6 +20,9 @@ end
 
 return {
     "nvim-telescope/telescope.nvim",
+    enabled = function()
+        return (not vim.g.vscode)
+    end,
     tag = "0.1.6",
     dependencies = {
         "nvim-lua/plenary.nvim",
