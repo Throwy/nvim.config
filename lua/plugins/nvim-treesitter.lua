@@ -1,4 +1,6 @@
 local config = function()
+    require('nvim-treesitter.install').compilers = { "gcc", "clang", "cc" }
+
     local treesitter = require("nvim-treesitter.configs")
 
     treesitter.setup({
