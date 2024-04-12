@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 opt.nu = true
 opt.relativenumber = true
 
@@ -10,6 +13,8 @@ opt.expandtab = true
 
 opt.smartindent = true
 
+opt.cursorline = true
+
 opt.wrap = false
 
 opt.swapfile = false
@@ -17,15 +22,15 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.hlsearch = false
+opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 opt.incsearch = true
 
 opt.termguicolors = true
 
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
 
-vim.g.mapleader = " "

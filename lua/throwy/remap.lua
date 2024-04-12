@@ -20,8 +20,8 @@ keymap.set("n", "<leader>Y", "\"+Y", keymap_options({ desc = "Yank to system cli
 
 keymap.set("n", "Q", "<nop>", keymap_options({ desc = "Don't go there" }))
 
-keymap.set("n", "<C-[>", "<cmd>cnext<CR>zz", keymap_options({ desc = "Quickfix list next" }))
-keymap.set("n", "<C-]>", "<cmd>cprev<CR>zz", keymap_options({ desc = "Quickfix list prev" }))
+keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", keymap_options({ desc = "Quickfix list next" }))
+keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", keymap_options({ desc = "Quickfix list prev" }))
 keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", keymap_options({ desc = "Quickfix list" }))
 keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", keymap_options({ desc = "Quickfix list" }))
 
