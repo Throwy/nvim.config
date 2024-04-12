@@ -3,14 +3,13 @@ local keymap_options = require("utils.core").keymap_options
 
 local config = function()
     local leap = require("leap")
-    leap.add_default_mappings()
     leap.opts.case_sensitive = false
     leap.opts.safe_labels = {}
 
-    keymap.set('n', 's', '<Plug>(leap)', keymap_options({ desc = "Bidirection leap" }))
-    keymap.set('n', 'S', '<Plug>(leap-from-window)', keymap_options({ desc = "Leap from window" }))
-    keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)', keymap_options({ desc = "Leap forward" }))
-    keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)', keymap_options({ desc = "Leap backward" }))
+    keymap.set('n', 'S', '<Plug>(leap)', keymap_options({ desc = "Bidirection leap" }))
+    -- keymap.set('n', 'S', '<Plug>(leap-from-window)', keymap_options({ desc = "Leap from window" }))
+    -- keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)', keymap_options({ desc = "Leap forward" }))
+    -- keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)', keymap_options({ desc = "Leap backward" }))
 
     -- The below settings make Leap's highlighting closer to what you've been
     -- used to in Lightspeed.

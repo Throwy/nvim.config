@@ -6,6 +6,8 @@ vim.g.maplocalleader = " "
 opt.nu = true
 opt.relativenumber = true
 
+vim.opt.showmode = false
+
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4

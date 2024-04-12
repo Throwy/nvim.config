@@ -1,5 +1,5 @@
 local config = function()
-    require('nvim-treesitter.install').compilers = { "gcc", "clang", "cc" }
+    require('nvim-treesitter.install').compilers = { "gcc", "clang", "zig" }
 
     local treesitter = require("nvim-treesitter.configs")
 
