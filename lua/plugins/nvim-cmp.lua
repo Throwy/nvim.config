@@ -33,7 +33,6 @@ local config = function()
         sources = {
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = "nvim_lsp_signature_help" },
             { name = 'path' },
         },
     })
@@ -45,7 +44,6 @@ return {
         event = 'InsertEnter',
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lsp-signature-help",
             "L3MON4D3/LuaSnip",
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-path',

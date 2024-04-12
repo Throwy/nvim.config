@@ -69,6 +69,14 @@ local config = function()
                     callback = vim.lsp.buf.clear_references,
                 })
             end
+
+            if client.server_capabilities.signatureHelpProvider then
+                require('lsp-overloads').setup(client, {
+                    ui = {
+                        floating_window_above_cur_line = true
+                    }
+                })
+            end
         end,
     })
 
@@ -97,6 +105,7 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "issafalcon/lsp-overloads.nvim",
             { 'j-hui/fidget.nvim', opts = {} },
             { 'folke/neodev.nvim', opts = {} },
         },
