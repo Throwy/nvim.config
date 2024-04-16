@@ -47,7 +47,7 @@ local config = function()
 
             map('rn', vim.lsp.buf.rename, 'Rename')
 
-            map('<F3>', vim.lsp.buf.format, 'Format')
+            -- map('<F3>', vim.lsp.buf.format, 'Format')
 
             map('ca', vim.lsp.buf.code_action, 'Code actions')
 
