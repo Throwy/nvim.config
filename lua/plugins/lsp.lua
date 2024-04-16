@@ -1,6 +1,3 @@
-local keymap = vim.keymap
-local keymap_options = require("utils.core").keymap_options
-
 local mason_opts = {
     ui = {
         icons = {
@@ -28,8 +25,6 @@ local config = function()
             local map = function(keys, func, desc)
                 vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
             end
-
-            local builtin = require('telescope.builtin')
 
             map('K', vim.lsp.buf.hover, 'Hover documentation')
 
@@ -69,7 +64,6 @@ local config = function()
                     callback = vim.lsp.buf.clear_references,
                 })
             end
-
         end,
     })
 

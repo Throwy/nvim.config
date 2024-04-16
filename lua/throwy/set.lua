@@ -13,7 +13,12 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 
+opt.breakindent = true
 opt.smartindent = true
+
+-- Case insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 opt.cursorline = true
 
@@ -35,4 +40,3 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
-
