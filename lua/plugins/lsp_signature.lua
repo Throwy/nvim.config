@@ -2,6 +2,7 @@ return {
     {
         'ray-x/lsp_signature.nvim',
         event = "VeryLazy",
+        enabled = false,
         opts = {
             max_height = 30,
             floating_window_above_cur_line = true,

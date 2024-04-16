@@ -15,7 +15,8 @@ local config = function()
             ["<C-p>"] = cmp.mapping.select_prev_item(),
             ["<C-f>"] = cmp.mapping.scroll_docs(-4),
             ["<C-b>"] = cmp.mapping.scroll_docs(4),
-            ["<TAB>"] = cmp.mapping.confirm({ select = true }),
+            ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+            ["<C-e>"] = cmp.mapping.abort(),
             ["<C-.>"] = cmp.mapping.complete(),
 
             ['<C-l>'] = cmp.mapping(function()
@@ -34,6 +35,7 @@ local config = function()
             { name = "nvim_lsp" },
             { name = "luasnip" },
             { name = 'path' },
+            { name = 'nvim_lsp_signature_help' }
         },
     })
 end
@@ -47,6 +49,7 @@ return {
             "L3MON4D3/LuaSnip",
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
         },
         config = config,
     },
