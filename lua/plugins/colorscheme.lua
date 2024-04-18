@@ -1,14 +1,17 @@
 return {
     {
         "Mofiqul/vscode.nvim",
-        enabled = function()
-            return (not vim.g.vscode)
-        end,
         name = "vscode",
+        priority = 1000,
+        config = true
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("vscode")
-        end
+            vim.cmd([[colorscheme gruvbox]])
+        end,
     },
 }
